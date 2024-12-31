@@ -1,0 +1,21 @@
+#include <string>
+#include <vector>
+#include <algorithm>
+
+
+using namespace std;
+
+int solution(int a, int b) {
+    string a1 = to_string(a);
+    string b1 = to_string(b);
+    
+    string a11 = a1+b1;
+    string b11 = b1+a1;
+    
+    int a12 = stoi(a11);
+    int b12 = stoi(b11);
+    
+    int answer = max(a12,b12);
+    
+    return answer;
+}

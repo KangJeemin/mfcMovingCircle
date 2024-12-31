@@ -1,0 +1,40 @@
+#include <string>
+#include <vector>
+
+using namespace std;
+
+int solution(vector<int> ingredient) {
+    int answer = 0;
+    int hamberger[4] ={1,2,3,1};
+    int index = 0;
+    
+    while(ingredient.size()>=4 && index < ingredient.size()-3){
+        bool ishamberger = true;
+        
+        for(int i=0;i<4;i++){
+            if(ingredient[index+i]!=hamberger[i]){
+                ishamberger=false;
+                index++;
+                break;
+            }
+        }
+        if(ishamberger){
+            for(int i=0;i<4;i++){
+                ingredient.erase(ingredient.begin()+index);
+            }
+            if(index>8){
+                index-=8;    
+            }
+            else{
+                index=0;    
+            }
+            
+            answer++;
+        }
+        
+    }
+    
+    
+    
+    return answer;
+}

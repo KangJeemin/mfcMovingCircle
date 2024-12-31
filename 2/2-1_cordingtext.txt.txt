@@ -1,0 +1,17 @@
+#include <string>
+#include <vector>
+
+using namespace std;
+
+int solution(int n, int k) {
+    int answer = 0;
+    
+    answer = answer + n *12000;
+    answer = answer + k *2000;
+    
+    int service = n/10;
+    
+    answer = answer - service *2000;
+    
+    return answer;
+}
